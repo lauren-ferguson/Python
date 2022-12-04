@@ -1,12 +1,4 @@
-# Multithread Python Port Scanner
-# Reference code: https://superfastpython.com/threadpoolexecutor-port-scanner/
-# Import packages
-from socket import AF_INET
-from socket import SOCK_STREAM
-from socket import socket
-from concurrent.futures import ThreadPoolExecutor
-
-
+# MULTITHREAD PORT SCANNER
 # Returns True if a connection can be made, False otherwise
 def test_port_number(host, port):
     with socket(AF_INET, SOCK_STREAM) as sock:  # Create socket
@@ -25,10 +17,10 @@ def port_scan(host, ports):
         results = executor.map(test_port_number, [host] * len(ports), ports)  # Dispatch tasks
         for port, is_open in zip(ports, results):  # Report results
             if is_open:
-                print(f'> {host}:{port} open')
+                print(f'{port} open')
 
 
 # Input host and define ports
 HOST = input("Please input website URL ")  # Input host
-PORTS = range(1024)
+PORTS = range(65535)
 port_scan(HOST, PORTS)  # Test ports
