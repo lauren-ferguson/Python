@@ -1,5 +1,5 @@
 # Multithread Python Port Scanner
-# Original source code: https://superfastpython.com/threadpoolexecutor-port-scanner/
+# Reference code: https://superfastpython.com/threadpoolexecutor-port-scanner/
 # Import packages
 from socket import AF_INET
 from socket import SOCK_STREAM
