@@ -40,7 +40,7 @@ def equal():
     text.set(ttl)
 
 
-entry = ttk.Entry(win, justify="right", textvariable=text)
+entry = ttk.Entry(win, justify="right", textvariable=text, font=default_font)
 entry.grid(row=0, columnspan=4, sticky="nsew")
 
 # Configure font for the Entry widget
